@@ -14,9 +14,6 @@ public class GifServiceImpl implements GifService {
     @Value("${api.gif.appId}")
     private String appId;
 
-    @Value("${api.gif.url}")
-    private String apiUrl;
-
     private final GifClient gifClient;
 
     @Override

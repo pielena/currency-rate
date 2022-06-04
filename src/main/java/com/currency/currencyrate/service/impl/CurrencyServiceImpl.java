@@ -25,12 +25,8 @@ public class CurrencyServiceImpl implements CurrencyService {
     @Value("${api.currency.zoneId}")
     private String zoneIdStr;
 
-    @Value("${api.currency.url}")
-    private String currencyServiceUrl;
-
     @Value("${api.currency.baseCurrencyCode}")
     private String baseCurrencyCode;
-
 
     private final CurrencyClient currencyClient;
 
