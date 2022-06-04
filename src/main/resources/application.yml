@@ -1,0 +1,19 @@
+server:
+  servlet:
+    context-path: /currency/api
+  error:
+    include-message: ALWAYS
+
+api:
+  currency:
+    client-name: currencies
+    url: https://openexchangerates.org/api/
+    appId: 0bd973553c83449aa012f8f5020dd1aa
+    baseCurrencyCode: USD
+    zoneId: GMT+03:00
+  gif:
+    client-name: gifs
+    url: https://api.giphy.com/v1/gifs/
+    appId: sOjeGpZlq3A3vy30KnFWo3QVBEE9JwgM
+    currency-difference-up: rich
+    currency-difference-down: broke
