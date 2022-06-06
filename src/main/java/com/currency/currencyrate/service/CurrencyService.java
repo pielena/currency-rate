@@ -1,9 +1,9 @@
 package com.currency.currencyrate.service;
 
 public interface CurrencyService {
-    enum currencyDifference {
+    enum CurrencyDifference {
         UP, DOWN
     }
 
-    currencyDifference getCurrencyDifference(String targetCurrencyCode);
+    CurrencyDifference getCurrencyDifference(String targetCurrencyCode);
 }

@@ -8,8 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import static com.currency.currencyrate.service.CurrencyService.currencyDifference.DOWN;
-import static com.currency.currencyrate.service.CurrencyService.currencyDifference.UP;
+import static com.currency.currencyrate.service.CurrencyService.CurrencyDifference.DOWN;
+import static com.currency.currencyrate.service.CurrencyService.CurrencyDifference.UP;
 import static java.time.LocalDate.now;
 import static java.time.ZoneId.of;
 import static java.time.temporal.ChronoUnit.DAYS;
@@ -31,7 +31,7 @@ public class CurrencyServiceImpl implements CurrencyService {
     private final CurrencyClient currencyClient;
 
     @Override
-    public currencyDifference getCurrencyDifference(@NonNull String targetCurrencyCode) {
+    public CurrencyDifference getCurrencyDifference(@NonNull String targetCurrencyCode) {
         if (!targetCurrencyCode.matches("^[A-Z]{3}$")) {
             throw new IllegalArgumentException("CurrencyCode must be valid");
         }
@@ -45,9 +45,7 @@ public class CurrencyServiceImpl implements CurrencyService {
         double todayTargetCurrencyValue = todayRate.getRates().get(targetCurrencyCode);
         double todayBaseCurrencyValue = todayRate.getRates().get(baseCurrencyCode);
 
-        Currency yesterdayRate = currencyClient.getByDate(
-                now(of(zoneIdStr)).minus(1, DAYS),
-                appId);
+        Currency yesterdayRate = currencyClient.getByDate(now(of(zoneIdStr)).minus(1, DAYS), appId);
 
         double yesterdayTargetCurrencyValue = yesterdayRate.getRates().get(targetCurrencyCode);
         double yesterdayBaseCurrencyValue = yesterdayRate.getRates().get(baseCurrencyCode);
