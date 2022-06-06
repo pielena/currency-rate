@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
 
-@FeignClient(value = "${api.currency.client-name}", url = "${api.currency.url}")
+@FeignClient(name = "${api.currency.client-name}", url = "${api.currency.url}")
 public interface CurrencyClient {
 
     @GetMapping("/latest.json?app_id={appId}")

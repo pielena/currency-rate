@@ -1,6 +1,5 @@
-package com.currency.currencyrate.config;
+package com.currency.currencyrate.model;
 
-import com.currency.currencyrate.model.Gif;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;

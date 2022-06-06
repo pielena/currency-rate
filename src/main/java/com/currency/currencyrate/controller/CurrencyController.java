@@ -15,7 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.regex.Pattern;
 
-import static com.currency.currencyrate.service.CurrencyService.currencyDifference.UP;
+import static com.currency.currencyrate.service.CurrencyService.CurrencyDifference.UP;
 import static java.util.regex.Pattern.compile;
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -44,7 +44,7 @@ public class CurrencyController {
     public byte[] getGifByCurrencyDifference(@RequestParam(name = "code") String targetCurrencyCode) {
         validateCurrencyCode(targetCurrencyCode);
 
-        CurrencyService.currencyDifference currencyDifference = currencyService.getCurrencyDifference(targetCurrencyCode);
+        CurrencyService.CurrencyDifference currencyDifference = currencyService.getCurrencyDifference(targetCurrencyCode);
 
         logger.info("Target currency: {}; base currency: {}; currency difference: {}", targetCurrencyCode, baseCurrencyCode, currencyDifference);
 
