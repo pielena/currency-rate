@@ -14,12 +14,24 @@
 - Spring Boot version 2.7.0
 - API Feign
 - Testing: JUnit (jupiter, mockito)
+- Docker
 
 ### Для запуска проекта необходимо:
+
+####Через GitHub:
 
 1. Gradle, Java
 2. Клонировать либо скачать проект из репозитория github
 3. Запустить проект
+
+####Через docker-образ:
+ 
+  Образ проекта: `pielena/currency-rate:currency-rate`
+
+  Для запуска контейнера:
+
+`docker run -d --rm -p 8080:8080 pielena/currency-rate:currency-rate`
+
 
 ### Настройки проекта (application.yml):
 
